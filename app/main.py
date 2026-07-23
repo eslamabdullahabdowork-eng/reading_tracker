@@ -29,6 +29,9 @@ async def pull_books(q: str):
                 raise HTTPException(status_code=503, detail="Google Books API is unavailable right now")
             time.sleep(1)
 
+    if r is None:
+        raise HTTPException(status_code=503, detail="Google Books API is unavailable right now")
+
     if r.status_code == 404:
         raise HTTPException(status_code=404, detail=f"{q} was not found")
     elif r.status_code >= 500:
@@ -39,7 +42,7 @@ async def pull_books(q: str):
 @app.post("/books/{id}")
 def add_book(id: str, read_state: BookState):
     if not id.strip():
-        raise HTTPException(status_code=400, detail="Search query cannot be empty")
+        raise HTTPException(status_code=400, detail="Book id cannot be empty")
     conn = get_connection()
     cur = conn.cursor()
     try:
@@ -96,36 +99,25 @@ def delete_book(id: str):
     cur = conn.cursor()
     try:
         cur.execute("DELETE FROM reading_state WHERE id = %s", (id,))
-        conn.commit()
         if cur.rowcount == 0:
             raise HTTPException(status_code=404, detail=f"No book found with id {id}")
-        
+        conn.commit()
         return
     finally:
         cur.close()
         conn.close()
 
 @app.get("/books/saved")
-
 def get_books(state: ReadState | None = None):
-
     conn = get_connection()
     cur = conn.cursor()
-
     try:
-
-         if state:
-
+        if state:
             cur.execute("SELECT * FROM reading_state WHERE read_state = %s", (state,))
-
-         else:
-
+        else:
             cur.execute("SELECT * FROM reading_state")
-
-            rows = cur.fetchall()
-            return rows
-
+        rows = cur.fetchall()
+        return rows
     finally:
-
-     cur.close()
-     conn.close()
+        cur.close()
+        conn.close()

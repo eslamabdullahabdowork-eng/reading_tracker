@@ -11,7 +11,7 @@ load_dotenv()
 app = FastAPI()
 
 
-@app.get("/"):
+@app.get("/")
 def welcom_user():
     return{"hello !": "welcome to my API !!"}
 

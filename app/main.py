@@ -1,8 +1,8 @@
 from fastapi import FastAPI,status,HTTPException
-from models import ReadState, BookState
+from .models import ReadState, BookState
 import requests
 import time
-from database import get_connection
+from .database import get_connection
 import os
 from dotenv import load_dotenv
 

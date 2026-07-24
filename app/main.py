@@ -13,7 +13,7 @@ app = FastAPI()
 
 @app.get("/")
 def welcom_user():
-    return{"hello !": "welcome to my API !!"}
+    return{"hello !": "welcome to my API !! go to / docs for interactive ui"}
 
 
 # this for getting books from google api:

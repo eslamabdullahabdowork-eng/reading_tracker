@@ -11,6 +11,11 @@ load_dotenv()
 app = FastAPI()
 
 
+@app.get("/"):
+def welcom_user():
+    return{"hello !": "welcome to my API !!"}
+
+
 # this for getting books from google api:
 @app.get("/search")
 async def pull_books(q: str):

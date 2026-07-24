@@ -7,6 +7,7 @@ class ReadState(str, Enum):
     not_yet = "not yet"
     want_to = "want to"
     dont_want_to = "dont want to"
+    reading = "currently reading"
 
 class BookState(BaseModel):
     reading_state: ReadState

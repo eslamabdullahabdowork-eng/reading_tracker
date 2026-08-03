@@ -5,13 +5,11 @@ import psycopg2
 load_dotenv()
 
 def get_connection():
-    # Railway provides a single DATABASE_URL environment variable automatically
     database_url = os.getenv("DATABASE_URL")
     
     if database_url:
         return psycopg2.connect(database_url)
     else:
-        # Fallback for your local computer if needed
         return psycopg2.connect(
             database="reading_tracker",
             user="postgres",

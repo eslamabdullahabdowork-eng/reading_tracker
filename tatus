@@ -1,0 +1,13 @@
+[33m4dba9bd[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m use psycopg2-binary with Aptfile for libpq
+[33m7a068a8[m use psycopg2-binary with Aptfile for libpq
+[33m5e20432[m use psycopg2-binary with Aptfile for libpq
+[33m917e2d4[m use psycopg2-binary with Aptfile for libpq
+[33mfb68c1d[m use psycopg2-binary with Aptfile for libpq
+[33m6068c8d[m use psycopg2-binary with Aptfile for libpq
+[33mfe924fd[m switch to psycopg-binary compatibility alias to avoid libpq error
+[33md0d9d2d[m clean up requirements with psycopg-binary only
+[33m526cb19[m clean up requirements with psycopg-binary only
+[33m460a362[m fix relative imports for app package
+[33m2365d13[m add error handling, retry logic, restore /books/saved
+[33m9f02be0[m add error handling, retry logic, restore /books/saved
+[33m0386d3e[m initial commit: working CRUD API for book tracker

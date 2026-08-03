@@ -12,11 +12,10 @@ app = FastAPI()
 
 
 @app.get("/")
-def welcom_user():
+def welcome_user():
     return{"hello !": "welcome to my API !! go to / docs for interactive ui"}
 
 
-# this for getting books from google api:
 @app.get("/search")
 async def pull_books(q: str):
     if not q.strip():

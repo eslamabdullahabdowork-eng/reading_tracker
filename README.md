@@ -2,7 +2,7 @@
 
 A RESTful API for tracking your personal reading list — search for books, add them to your list, and track your reading progress.
 
-🔗 **Live API docs:** https://readingtracker-production.up.railway.app/docs
+🔗 **Live API docs:** https://reading-tracker-d9899.containers.snapdeploy.app/docs
 
 ## Features
 

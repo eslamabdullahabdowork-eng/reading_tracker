@@ -18,7 +18,7 @@ A RESTful API for tracking your personal reading list — search for books, add 
 - **Framework:** FastAPI
 - **Database:** PostgreSQL (raw SQL via psycopg2 — no ORM)
 - **External API:** Google Books API
-- **Deployment:** Railway
+- **Deployment:** Snapdeploy
 
 ## Why no ORM?
 
@@ -52,13 +52,5 @@ pip install -r requirements.txt
 uvicorn app.main:app --reload
 \`\`\`
 
-## Roadmap
-
-- [ ] User authentication (multi-user support)
-- [ ] Migrate to an ORM (SQLAlchemy)
-- [ ] Book reviews / ratings
-- [ ] Categories & tags
-
----
 
 Built as a hands-on project to learn backend development — API design, PostgreSQL, and deployment.
